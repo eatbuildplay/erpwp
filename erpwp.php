@@ -16,6 +16,8 @@
 defined('ABSPATH') || exit;
 
 namespace ERPWP;
+use \ERPWP\Components\Goals\PostTypeGoal;
+use \ERPWP\Components\Goals\GoalController;
 
 // Define conts.
 define('ERPWP_PLUGIN_NAME', 'ERP WP');
@@ -29,6 +31,10 @@ class Plugin {
 
 		$this->loader();
 
+		add_action('wp_enqueue_scripts', function() {
+			$this->scripts();
+		});
+
 	}
 
 	/*
@@ -39,8 +45,9 @@ class Plugin {
 		spl_autoload_register([$this, 'autoload']);
 
     add_action('init', function() {
-      $pt = new \ERPWP\Components\Goals\PostTypeGoal();
+      $pt = new PostTypeGoal();
       $pt->register();
+			new GoalController();
     });
 
 	}
@@ -67,9 +74,36 @@ class Plugin {
 
 	}
 
+	public function scripts() {
+
+		wp_enqueue_style(
+	    'erpwp--font-awesome',
+	    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css',
+	    array(),
+	    true
+	  );
+
+		wp_enqueue_style(
+	    'erpwp-bootstrap',
+	    'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css',
+	    array(),
+	    true
+	  );
+
+		wp_enqueue_script(
+	    'erpwp-bootstrap',
+	    'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js',
+	    array('jquery'),
+	    '5.0.0',
+	    true
+	  );
+
+	}
+
   public static function activation() {
 
   }
+
 
 }
 
