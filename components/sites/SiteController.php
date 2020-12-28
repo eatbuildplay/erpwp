@@ -1,7 +1,7 @@
 <?php
 
 namespace ERPWP\Components\Sites;
-use \ERPWP\Components\Goals\PostTypeSite;
+use \ERPWP\Components\Sites\PostTypeSite;
 
 class SiteController {
 

@@ -44,12 +44,8 @@ class Plugin {
 
 		spl_autoload_register([$this, 'autoload']);
 
-    add_action('init', function() {
-
-			new GoalController();
-			new SiteController();
-
-    });
+		new GoalController();
+		new SiteController();
 
 	}
 
