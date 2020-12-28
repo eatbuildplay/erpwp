@@ -4,7 +4,6 @@
 
 //var_dump( $post );
 
-
 ?>
 
 <h1><?php print $post->post_title; ?></h1>
