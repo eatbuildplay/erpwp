@@ -1,10 +1,18 @@
 <?php
 
 namespace ERPWP\Components\Goals;
+use \ERPWP\Components\Goals\PostTypeGoal;
 
 class GoalController {
 
   public function __construct() {
+
+    add_action('init', function() {
+
+      $pt = new PostTypeGoal();
+      $pt->register();
+
+    });
 
     add_action('wp_ajax_goal_save', function() {
 

@@ -1,10 +1,18 @@
 <?php
 
 namespace ERPWP\Components\Sites;
+use \ERPWP\Components\Goals\PostTypeSite;
 
 class SiteController {
 
   public function __construct() {
+
+    add_action('init', function() {
+
+      $pt = new PostTypeSite();
+      $pt->register();
+
+    });
 
     add_action('wp_ajax_site_save', function() {
 

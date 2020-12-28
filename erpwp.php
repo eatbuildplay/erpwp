@@ -16,9 +16,7 @@
 defined('ABSPATH') || exit;
 
 namespace ERPWP;
-use \ERPWP\Components\Goals\PostTypeGoal;
 use \ERPWP\Components\Goals\GoalController;
-use \ERPWP\Components\Sites\PostTypeSite;
 use \ERPWP\Components\Sites\SiteController;
 
 // Define conts.
@@ -48,12 +46,7 @@ class Plugin {
 
     add_action('init', function() {
 
-      $pt = new PostTypeGoal();
-      $pt->register();
 			new GoalController();
-
-			$pt = new PostTypeSite();
-      $pt->register();
 			new SiteController();
 
     });
