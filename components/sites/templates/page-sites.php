@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-<button class="btn">Set Goal</button>
+<button class="btn">Add Site</button>
 
 <?php get_footer(); ?>
