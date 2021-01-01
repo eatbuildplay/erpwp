@@ -18,6 +18,7 @@ defined('ABSPATH') || exit;
 namespace ERPWP;
 use \ERPWP\Components\Goals\GoalController;
 use \ERPWP\Components\Sites\SiteController;
+use \ERPWP\Components\Recruiting\RecruitingController;
 
 // Define conts.
 define('ERPWP_PLUGIN_NAME', 'ERP WP');
@@ -46,6 +47,7 @@ class Plugin {
 
 		new GoalController();
 		new SiteController();
+		new RecruitingController();
 
 	}
 
