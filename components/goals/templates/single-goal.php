@@ -13,7 +13,7 @@
 
 <div class="container">
   <div class="row">
-    <form>
+    <form id="goal-save-form">
 
       <input id="field_post_id" type="hidden" value="<?php print $post->ID; ?>" />
 
